@@ -1,0 +1,58 @@
+Probability definitions and rules:
+https://ds1.datascience.uchicago.edu/11/1/Probability_1_RulesDefinitions.html
+
+from collections import Counter
+Counter - calculates for each element in the list a number of occurences.
+Counter([]).most_common(1) - finds the most frequent element.
+
+Central Limit Theorem (CLT) - The Central Limit Theorem (CLT) states that 
+if you take sufficiently large random samples from a population with replacement, 
+the distribution of sample means will be approximately normally distributed.
+
+Normal Distribution - .
+
+Uniform Distribution - is used when all events in a given sample space are equally likely to occur.
+
+Binomal Distribution - As the prefix bi- implies, the Binomial Probability distribution
+describes a situation with two possible outcomes - often times described as ‘success’ or ‘failure’.
+
+Bernoulli Trial - Statisticians call any random experiment with two possible outcomes
+as described above a Bernoulli Trial.
+
+Margin of Error (MoE)
+
+---Confidence intervals---
+
+t-multiplier for less than 30 samples - similar to sigma
+z-multiplier for more than 30 samples -similar to sigma
+
+import statsmodels.api as sm
+sm.stats.proportion_confint(n * p, n) - calculates confidence intervals for a proportion
+
+standard error(se) - calculates by std/np.sqrt(n)
+
+sm.stats.DescrStatsW(df["CWDistance"]).zconfint_mean() - also calculates confidence intervals
+--------------------------
+
+---Hypothesis testing---
+
+Ingredients of hypothesis testing:
+
+- A null hypothesis (e.g. SSR=1.05);
+- An alternative hypothesis (e.g. SSR!=1.05);
+-A test statistic;
+-A decision or a measure of significance that is obtained 
+from the test statistic and its distribution under the null hypothesis.
+
+---Interpretation of p-values---
+
+When H0 is true: p-value is (approximately) distributed uniform on the interval [0,1]:
+
+- about half of p-values are larger than 0.5
+- about 10% are smaller than 0.1
+- about 5% are smaller than 0.05
+
+A small p-value (typically smaller than 0.05 or 0.01) indicates evidence against the null 
+hypothesis (smaller the p-value, stronger the evidence). 
+A large p-value indicates no evidence (or weak evidence) against the null.
+
